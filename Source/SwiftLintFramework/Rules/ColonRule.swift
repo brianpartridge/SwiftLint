@@ -72,8 +72,6 @@ public struct ColonRule: CorrectableRule {
 
     private func validMatchesInFile(file: File, withPattern pattern: String) -> [NSRange] {
         return file.matchPattern(pattern).filter { range, syntaxKinds in
-            print(file.contents)
-            print(pattern)
             if !syntaxKinds.startsWith([.Identifier, .Typeidentifier]) {
                 return false
             }
